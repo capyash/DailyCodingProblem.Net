@@ -7,9 +7,10 @@ using System.Xml;
 
 namespace YashCapoor.DailyCodingProblem.Solutions
 {
+    /// <inheritdoc cref="IProblem386Solution"/>
     public class Problem386Solution : IProblemSolution, IProblem386Solution
     {
-        /// <inheritdoc cref=""/>
+        /// <inheritdoc />
         public void SolveProblem()
         {
             Console.WriteLine("Enter your string: ");
@@ -17,9 +18,15 @@ namespace YashCapoor.DailyCodingProblem.Solutions
             Console.WriteLine($"Your string ordered by decreasing order of frequency: {SortStringByDecreasingFrequency(input)}");
         }
 
+        /// <inheritdoc />
         public string SortStringByDecreasingFrequency(string input)
         {
             // Brute force - add them to sorted list
+
+            if (string.IsNullOrEmpty(input))
+            {
+                return input;
+            }
 
             var list = new Dictionary<char, int>();
             foreach (var character in input.ToCharArray())

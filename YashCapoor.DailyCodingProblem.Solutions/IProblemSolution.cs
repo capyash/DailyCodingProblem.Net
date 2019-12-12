@@ -1,5 +1,8 @@
 ﻿namespace YashCapoor.DailyCodingProblem.Solutions
 {
+    /// <summary>
+    /// Common Interface to enable calling solution.
+    /// </summary>
     public interface IProblemSolution
     {
         /// <summary>
