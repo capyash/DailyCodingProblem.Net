@@ -13,4 +13,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\YashCapoor.DailyCodingProblem.Solutions\YashCapoor.DailyCodingProblem.Solutions.csproj" />
+  </ItemGroup>
+
 </Project>
