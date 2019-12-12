@@ -1,10 +1,39 @@
-﻿namespace YashCapoor.DailyCodingProblem.Solutions
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Xml;
+
+namespace YashCapoor.DailyCodingProblem.Solutions
 {
     public class Problem386Solution : IProblem386Solution
     {
         public string SortStringByDecreasingFrequency(string input)
         {
-            throw new System.NotImplementedException();
+            // Brute force - add them to sorted list
+
+            var list = new Dictionary<char, int>();
+            foreach (var character in input.ToCharArray())
+            {
+                if (list.ContainsKey(character))
+                {
+                    list[character] = list[character] + 1;
+                }
+                else
+                {
+                    list[character] = 1;
+                }
+            }
+
+            var sb = new StringBuilder(input.Length);
+
+            foreach (var character in list.OrderByDescending(x => x.Value).Select(x => x.Key).Distinct())
+            {
+                sb.Append(character, list[character]);
+            }
+
+            return sb.ToString();
+
         }
     }
 }
